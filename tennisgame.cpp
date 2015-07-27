@@ -60,7 +60,7 @@ class TennisGame {
                 cout << "D-" <<scoreEquivalence[scoreBoard[i].first] << " " << "F-" << scoreEquivalence[scoreBoard[i].second] << endl ;
         }
     }
-        void displayCurrentScore ( int i ) {
+        void displayScoreAtCertainPosition ( int i ) {
             if (scoreBoard[i].first >= 3 &&  scoreBoard[i].second >=3) {
                 if (scoreBoard[i].first==scoreBoard[i].second)
                     cout << "deuce" << endl;
@@ -91,6 +91,6 @@ int main() {
         tennisGame.updateScoreBoard(playerScoreSequence[i]);
 	}
 	tennisGame.displayFullScoreboard();
-	tennisGame.displayCurrentScore(5);
+	tennisGame.displayScoreAtCertainPosition(5);
 	return 0;
 }
