@@ -19,9 +19,12 @@ class TennisGame {
 			scoreBoard.push_back(pair<int,int>(0,0));		
 		}
 		
-		void updateScoreBoard(char scorer, pair<int, int> currentScore) {
+		void updateScoreBoard(char scorer) {
+			pair<int, int> currentScore = scoreBoard[scoreBoard.size() - 1];
 			pair<int, int> newScore = scorer == 'D' ? pair<int, int> (currentScore.first + 1, currentScore.second) : pair<int, int> (currentScore.first, currentScore.second + 1);
 			if(isValid(newScore)){
+				cout << newScore.first << " ";
+				cout << newScore.second << endl ;
 				scoreBoard.push_back(newScore);
 				return;	
 			}
@@ -33,6 +36,9 @@ class TennisGame {
 int main() {
 	TennisGame tennisGame;
 	string playerScoreSequence = "DFFFDF";
-	tennisGame.updateScoreBoard('F', pair<int, int> (0,0));
+	tennisGame.updateScoreBoard('F');
+	tennisGame.updateScoreBoard('D');
+	tennisGame.updateScoreBoard('F');
+	tennisGame.updateScoreBoard('F');
 	return 0; 
 }
